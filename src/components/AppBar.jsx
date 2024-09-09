@@ -1,10 +1,8 @@
-import { Box, Flex, HStack, IconButton, Input, useDisclosure, Avatar, Text } from '@chakra-ui/react';
+import { Flex, HStack, IconButton, Input, Avatar, Text } from '@chakra-ui/react';
 import { SearchIcon, BellIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
 
 const AppBar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <Flex
       as="header"

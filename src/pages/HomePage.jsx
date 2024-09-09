@@ -1,6 +1,6 @@
 import { Box, Grid, useDisclosure, IconButton, Text, VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaUniversity, FaBook, FaFingerprint, FaCalendarAlt, FaBus, FaHotel, FaUsers, FaMoneyCheck, FaClipboardList, FaClipboard, FaQuestionCircle } from 'react-icons/fa'; // Add appropriate icons
+import { FaUniversity, FaBook, FaFingerprint, FaCalendarAlt, FaBus, FaHotel, FaUsers, FaMoneyCheck, FaClipboardList, FaClipboard, FaQuestionCircle } from 'react-icons/fa'; // Add appropriate icons
 import AppBar from '../components/AppBar';
 import Drawer from '../components/Drawer';
 import BottomNavigationBar from '../components/BottomNavigationBar';
