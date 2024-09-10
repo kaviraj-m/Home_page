@@ -20,7 +20,7 @@ const BottomNavigationBar = () => {
       py={1} // Reduced padding for a lower height
       boxShadow="0px -2px 8px rgba(0, 0, 0, 0.2)"
       borderTop="1px solid #e2e8f0"
-      zIndex={1000}
+      zIndex={100} // Lower zIndex to be below FloatingActionButton
     >
       <HStack justify="space-evenly" align="center" width="100%">
         <Link to="/">
@@ -28,9 +28,9 @@ const BottomNavigationBar = () => {
             <IconButton
               icon={<FaHome size="20px" />} // Slightly smaller icon
               aria-label="Home"
-              color="#CFAC56" // Gold color for icons
+              color="#C0C0C0" // Silver color for icons
               variant="ghost"
-              _hover={{ bg: '#1E3A8A', color: '#CFAC56' }} // Adjusted hover effects
+              _hover={{ bg: '#1E3A8A', color: '#C0C0C0' }} // Adjusted hover effects
               size="md" // Standard button size
             />
             <Text fontSize="xs" color="#FEFEFE">Home</Text> {/* Smaller font size */}
@@ -42,9 +42,9 @@ const BottomNavigationBar = () => {
             <IconButton
               icon={<FaBell size="20px" />}
               aria-label="Notifications"
-              color="#CFAC56"
+              color="#C0C0C0" // Silver color for icons
               variant="ghost"
-              _hover={{ bg: '#1E3A8A', color: '#CFAC56' }}
+              _hover={{ bg: '#1E3A8A', color: '#C0C0C0' }} // Adjusted hover effects
               size="md"
             />
             <Text fontSize="xs" color="#FEFEFE">Notifications</Text>
@@ -56,9 +56,9 @@ const BottomNavigationBar = () => {
             <IconButton
               icon={<FaCog size="20px" />}
               aria-label="Settings"
-              color="#CFAC56"
+              color="#C0C0C0" // Silver color for icons
               variant="ghost"
-              _hover={{ bg: '#1E3A8A', color: '#CFAC56' }}
+              _hover={{ bg: '#1E3A8A', color: '#C0C0C0' }} // Adjusted hover effects
               size="md"
             />
             <Text fontSize="xs" color="#FEFEFE">Settings</Text>

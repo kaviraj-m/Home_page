@@ -35,7 +35,7 @@ const HomePage = () => {
     <Box minH="100vh" display="flex" flexDirection="column" bg="#FEFEFE">
       <AppBar />
       <Drawer isOpen={isOpen} onClose={onClose} />
-      <Box as="main" flex="1" p={6} pb={24}>
+      <Box as="main" flex="1" p={6} pb={20}> {/* Increased padding-bottom */}
         <Grid templateColumns={gridTemplateColumns} gap={6}>
           {pages.map((page) => (
             <Link to={page.path} key={page.name}>
