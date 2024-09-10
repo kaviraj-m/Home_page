@@ -1,4 +1,3 @@
-// src/pages/Notifications.jsx
 import React from 'react';
 import {
   Box,
@@ -12,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { FaBell, FaCheckCircle, FaExclamationCircle, FaInfoCircle } from 'react-icons/fa';
 import BottomNavigationBar from '../components/BottomNavigationBar';
+import AppBar from '../components/AppBar'; // Import the AppBar component
 
 const NotificationItem = ({ icon, title, description, time, status }) => {
   const statusColor = {
@@ -22,7 +22,7 @@ const NotificationItem = ({ icon, title, description, time, status }) => {
   }[status];
 
   return (
-    <Box p={4} borderRadius="md" boxShadow="md" bg="white">
+    <Box p={4} borderRadius="md" boxShadow="md" bg="white" mb={4}>
       <HStack spacing={4} align="start">
         <Avatar icon={<Icon as={icon} w={6} h={6} color={statusColor} />} bg={statusColor} />
         <VStack align="start" spacing={1}>
@@ -72,23 +72,32 @@ const Notifications = () => {
   ];
 
   return (
-    <Box p={4} pt="70px" minHeight="100vh">
-      <Text fontSize="2xl" fontWeight="bold" mb={4}>
-        Notifications
-      </Text>
-      <VStack spacing={4} align="stretch">
-        {notifications.map((notification, index) => (
-          <NotificationItem
-            key={index}
-            icon={notification.icon}
-            title={notification.title}
-            description={notification.description}
-            time={notification.time}
-            status={notification.status}
-          />
-        ))}
-      </VStack>
-      <BottomNavigationBar />
+    <Box display="flex" flexDirection="column" minHeight="100vh">
+      <AppBar /> {/* Include the AppBar component */}
+      <Box
+        flex="1"
+        p={4}
+        pt="30px" // Reduced padding-top to decrease space above notifications
+        pb="60px" // Add padding at the bottom to prevent overlap with BottomNavigationBar
+        overflowY="auto" // Enable scrolling if content overflows
+      >
+        <Text fontSize="2xl" fontWeight="bold" mb={2}>
+          Notifications
+        </Text>
+        <VStack spacing={4} align="stretch">
+          {notifications.map((notification, index) => (
+            <NotificationItem
+              key={index}
+              icon={notification.icon}
+              title={notification.title}
+              description={notification.description}
+              time={notification.time}
+              status={notification.status}
+            />
+          ))}
+        </VStack>
+      </Box>
+      <BottomNavigationBar /> 
     </Box>
   );
 };

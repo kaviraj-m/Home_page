@@ -19,6 +19,7 @@ import TimeSheetAppraisal from './pages/TimeSheetAppraisal';
 import Settings from './pages/Settings';
 import Help from './pages/Help';
 import Notifications from './pages/Notifications'; // Import the Notifications component
+import ProfilePage from './pages/ProfilePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -41,6 +42,7 @@ root.render(
         <Route path="/time-sheet-appraisal" element={<TimeSheetAppraisal />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/help" element={<Help />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/notifications" element={<Notifications />} /> {/* Add the Notifications route */}
       </Routes>
     </Router>

@@ -3,37 +3,37 @@ import { Box, HStack, VStack, IconButton, Text, useBreakpointValue } from '@chak
 import { FaHome, FaBell, FaCog } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const ResponsiveNavigationBar = () => {
+const BottomNavigationBar = () => {
   // Responsive display for different screen sizes
   const display = useBreakpointValue({ base: 'flex', lg: 'flex' });
 
   return (
-    // Smaller bottom navigation for both desktop and mobile
+    // Bottom navigation with improved design
     <Box
       position="fixed"
       bottom={0}
       left={0}
       width="100%"
-      bg="blue.600"
-      color="white"
+      bg="#224581" // Use dark blue for better contrast
+      color="#FEFEFE" // White color for text and icons
       display={display}
-      py={1} // Reduce padding
-      boxShadow="0px -2px 10px rgba(0, 0, 0, 0.1)"
+      py={1} // Reduced padding for a lower height
+      boxShadow="0px -2px 8px rgba(0, 0, 0, 0.2)"
       borderTop="1px solid #e2e8f0"
       zIndex={1000}
     >
       <HStack justify="space-evenly" align="center" width="100%">
         <Link to="/">
-          <VStack spacing={0.5}> {/* Reduce spacing between icon and text */}
+          <VStack spacing={0.5}> {/* Reduced spacing for a more compact look */}
             <IconButton
-              icon={<FaHome size="20px" />} // Smaller icon
+              icon={<FaHome size="20px" />} // Slightly smaller icon
               aria-label="Home"
-              colorScheme="teal"
+              color="#CFAC56" // Gold color for icons
               variant="ghost"
-              _hover={{ bg: 'blue.700' }}
-              size="md" // Smaller button size
+              _hover={{ bg: '#1E3A8A', color: '#CFAC56' }} // Adjusted hover effects
+              size="md" // Standard button size
             />
-            <Text fontSize="xs" color="whiteAlpha.900">Home</Text>
+            <Text fontSize="xs" color="#FEFEFE">Home</Text> {/* Smaller font size */}
           </VStack>
         </Link>
 
@@ -42,12 +42,12 @@ const ResponsiveNavigationBar = () => {
             <IconButton
               icon={<FaBell size="20px" />}
               aria-label="Notifications"
-              colorScheme="teal"
+              color="#CFAC56"
               variant="ghost"
-              _hover={{ bg: 'blue.700' }}
+              _hover={{ bg: '#1E3A8A', color: '#CFAC56' }}
               size="md"
             />
-            <Text fontSize="xs" color="whiteAlpha.900">Notifications</Text>
+            <Text fontSize="xs" color="#FEFEFE">Notifications</Text>
           </VStack>
         </Link>
 
@@ -56,12 +56,12 @@ const ResponsiveNavigationBar = () => {
             <IconButton
               icon={<FaCog size="20px" />}
               aria-label="Settings"
-              colorScheme="teal"
+              color="#CFAC56"
               variant="ghost"
-              _hover={{ bg: 'blue.700' }}
+              _hover={{ bg: '#1E3A8A', color: '#CFAC56' }}
               size="md"
             />
-            <Text fontSize="xs" color="whiteAlpha.900">Settings</Text>
+            <Text fontSize="xs" color="#FEFEFE">Settings</Text>
           </VStack>
         </Link>
       </HStack>
@@ -69,4 +69,4 @@ const ResponsiveNavigationBar = () => {
   );
 };
 
-export default ResponsiveNavigationBar;
+export default BottomNavigationBar;
